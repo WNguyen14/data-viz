@@ -22,39 +22,7 @@ ChartJS.register(
   Legend
 );
 import { Container, Dropdown } from "@nextui-org/react";
-
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top" as const,
-    },
-    title: {
-      display: true,
-      text: "Chart.js Line Chart",
-    },
-  },
-};
-
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Dataset 1",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-    {
-      label: "Dataset 2",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-    },
-  ],
-};
+import DataChart from "../DataChart";
 
 export default function FirstPost() {
   return (
@@ -103,10 +71,7 @@ export default function FirstPost() {
         ></script>
 
         <div className="row">
-          <div className="col-10">
-            {" "}
-            <Line options={options} data={data} />
-          </div>
+          <DataChart />
           <div className="col">
             <h2> Query Selection</h2>
             <div className="container">

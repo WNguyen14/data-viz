@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import React, { HtmlHTMLAttributes } from "react";
+import CountryList from "./CountryList.js"
 const inter = Inter({ subsets: ["latin"] });
 const handleNavClick = (event: React.MouseEvent<HTMLElement>) => {
   console.log(event);
@@ -63,6 +64,7 @@ export default function Home() {
                 <p className="lead text-body-secondary">
                   Visualize the financial data through the lens of global events
                 </p>
+                <CountryList />
                 <p>
                   <Link href="/posts/first-post" passHref>
                     <button
